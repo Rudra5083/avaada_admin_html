@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avaada</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-2">
+            <a href="existing_vendors.html"
+              ><img src="images/logo.png" alt="" height="51""></a
+            >
+          </div>
+
+          <div class="col-md-5 ms-auto invites_log1">
+            <div class="invites"></div>
+
+            <div class="notification">
+              <a
+                class="dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-bell-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"
+                  />
+                </svg>
+
+                <div class="circle">3</div>
+              </a>
+
+              <div class="dropdown">
+                <div class="notifications dropdown-menu">
+                  <div class="notifications_heading justify-content-between">
+                    Notifications
+
+                    <span>2 New</span>
+                  </div>
+
+                  <div class="notifications_inside">
+                    <ul>
+                      <li>
+                        <a href="#"
+                          >New vendor details submitted: Vendor Code VND205</a
+                        >
+                        <div class="time_outer">
+                          <img src="images/time.png" alt="" /> 30 Min Ago
+                        </div>
+                      </li>
+
+                      <li>
+                        <a href="#"
+                          >Vendor details received: Vendor Code VND203, Name -
+                          MechCorp Engineering.</a
+                        >
+                        <div class="time_outer">
+                          <img src="images/time.png" alt="" /> 47 Min Ago
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="user_box">
+              <img src="images/userkumar.png" alt="" />
+              <a
+                class="dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Rahul Verma
+              </a>
+
+              <div class="dropdown">
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Profile</a></li>
+                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                  <li>
+                    <a class="dropdown-item" href="index.html">Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-2 left_menu">
+            <ul>
+              <li><a href="#">Dashboard</a></li>
+              <li><a href="#">My Master Data
+            </a></li>
+            <li><a href="Admin_existing_vendors.html">Vendor</a></li>
+            <li><a href="#">Accounts</a></li>
+              <li><a href="#">Configuration</a></li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-10">
+            <div class="vendor_btn">
+              <a
+                class="vendor_btn vendor_maine_content"
+                data-toggle="modal"
+                data-target="#uploadexcelfile"
+              >
+              <div class="import_modal_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"/>
+                <path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+              </svg>   Import</div>
+           
+              </a>
+              <a
+                class="vendor_btn vendor_maine_content"
+                data-toggle="modal"
+                data-target="#contactModal"
+              >
+                + Create Employee
+              </a>
+            </div>
+
+            <!-- Create Employee Modal -->
+            <div class="form-container">
+              <div
+                class="modal vendor_modal hidemodal"
+                id="contactModal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="contactModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content1">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="contactModalLabel">
+                        Create Employee
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body" style="display: flex;
+                    max-width: 100%;
+                    justify-content:center">
+                      <form id="vendorForm">
+                        <div class="lets_modal_vendor">
+                          <div class="lets_select_sme">
+                            <label class="mb-1 text-dark"
+                              >Employee Name
+                              <span class="required">*</span></label
+                            >
+                            <input
+                              type="text"
+                              id="contactName"
+                              class="form-control form_h_modal"
+                              placeholder="Person Name"
+                              required
+                            />
+                            <div
+                              class="error-message"
+                              id="contactNameError"
+                            ></div>
+                          </div>
+                          <div class="lets_select_sme">
+                            <label class="mb-1 text-dark"
+                              >Email ID <span class="required">*</span></label
+                            >
+                            <input
+                              type="email"
+                              id="vendorEmail"
+                              class="form-control form_h_modal"
+                              placeholder="Enter Email ID"
+                              required
+                            />
+                            <div
+                              class="error-message"
+                              id="vendorEmailError"
+                            ></div>
+                          </div>
+                          <div class="lets_select_sme">
+                            <label class="mb-1 text-dark"
+                              >Phone Number
+                              <span class="required">*</span></label
+                            >
+                            <input
+                              type="tel"
+                              id="contactNumber"
+                              minlength="10"
+                              maxlength="10"
+                              class="form-control form_h_modal"
+                              placeholder="Enter Phone Number"
+                              pattern="[0-9]{10}"
+                              title="Please enter a valid 10-digit mobile number"
+                              required
+                            />
+                            <div
+                              class="error-message"
+                              id="contactNumberError"
+                            ></div>
+                          </div>
+                        </div>
+                        <div class="lets_modal_vendor">
+                          <div class="lets_select_sme">
+                            <label class="mb-1 text-dark"
+                              >Alternate Mobile Number
+                              <span class="required">*</span></label
+                            >
+                            <input
+                              type="tel"
+                              id="contactNumber"
+                              minlength="10"
+                              maxlength="10"
+                              class="form-control form_h_modal"
+                              placeholder="Enter Phone Number"
+                              pattern="[0-9]{10}"
+                              title="Please enter a valid 10-digit mobile number"
+                              required
+                            />
+                            <div
+                              class="error-message"
+                              id="contactNumberError"
+                            ></div>
+                          </div>
+                          <div class="lets_select_sme">
+                            <label class="mb-1 text-dark"
+                              >Date of Birth
+                              <span class="required">*</span></label
+                            >
+                            <input
+                              type="text"
+                              id="contactName"
+                              class="form-control form_h_modal"
+                              placeholder="Please Enter the Date of Birth"
+                              required
+                            />
+                            <div
+                              class="error-message"
+                              id="contactNameError"
+                            ></div>
+                          </div>
+                          <div class="lets_select_sme">
+                            <label class="mb-1 text-dark"
+                              >Employee ID
+                              <span class="required">*</span></label
+                            >
+                            <input
+                              type="text"
+                              id="contactName"
+                              class="form-control form_h_modal"
+                              placeholder="Person Name"
+                              required
+                            />
+                            <div
+                              class="error-message"
+                              id="contactNameError"
+                            ></div>
+                          </div>
+                          
+                      
+                        </div>
+                        <div class="lets_modal_vendor">
+                        <div class="lets_select_sme1">
+                            <label class="mb-1 text-dark"
+                              >Department <span class="required">*</span></label
+                            >
+
+                            <select
+                              id="onboardingType"
+                              class="form-select"
+                              aria-label="Default select example"
+                            >
+                              <option selected>Engineering</option>
+                              <option value="1">Quality</option>
+                              <option value="2">Projects</option>
+                              <option value="3">Strategy</option>
+                              <option value="4">EHS</option>
+                              <option value="5">IT</option>
+                              <option value="6">Admin</option>
+                            </select>
+                            <div
+                              class="error-message"
+                              id="vendorEmailError"
+                            ></div>
+                          </div>
+                          <div class="Newvendor_category">
+                            <label class="mb-1 text-dark"
+                              >Role <span class="required">*</span></label
+                            >
+  
+                            <select
+                              id="onboardingType"
+                              class="form-select form_selectedonboarding"
+                              aria-label="Default select example"
+                            >
+                              <option selected>Select</option>
+                              <option value="1">Select</option>
+                              <option value="2">Select</option>
+                            </select>
+                            <div
+                              class="error-message"
+                              id="onboardingTypeError"
+                            ></div>
+                          </div>
+                        </div>
+                        
+                 
+                        <div class="clear_btn_status">
+                          <button
+                            type="button"
+                            class="btn clear_btn"
+                            data-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-success save_next_btn"
+                            onclick="validateForm()"
+                          >
+                            Submit
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Create Employee upload Excel file -->
+            <div class="form-container">
+              <div
+                class="modal vendor_modal hidemodal"
+                id="uploadexcelfile"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="#uploadexcelfileLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog" style="display: flex;
+                max-width: 100%;
+                justify-content:center" role="document">
+                  <div class="modal-content1">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="#uploadexcelfileLabel">
+                        Create Employee (Upload Excel File)
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="vendorForm">
+                        <div class="lets_modal_vendor2">
+                          <p>Upload Excel Template</p>
+                          <div class="mb-3 d-flex">
+                            <input class="form-control form-h choose" type="file" id="">
+                            <button class="upload_excelfile_btn">
+                                Download Excel Template
+                            </button>
+                          </div>
+                         
+                         
+                        <div class="clear_btn_status">
+                          <button
+                            type="button"
+                            class="btn clear_btn"
+                            data-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-success save_next_btn"
+                            onclick="validateForm()"
+                          >
+                            Submit
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="heading_search_outer d-flex">
+              <div class="main_heading_lets">
+                <h4 class="vendor3">Employee Creation
+                </h4>
+                <h4 class="vendor"><a href="category_management.html">Category Management</a></h4>                <h4 class="vendor "><a href="Maping_priority_setup_management.html">Status & Mapping Management</a></h4>              
+                <h4 class="vendor">Employee Management</h4>
+
+          
+              </div>
+
+              <div class="search_filter_outer ms-auto">
+                <div class="search_main">
+                  <div id="custom-search-input">
+                    <div class="input-group col-md-12">
+                      <input
+                        type="text"
+                        class="form-control input-lg"
+                        placeholder="Search here"
+                        fdprocessedid="lrvoks"
+                      />
+                      <span class="input-group-btn">
+                        <button
+                          class="btn btn-info btn-lg"
+                          type="button"
+                          fdprocessedid="hlff68"
+                        >
+                          <span class="glyphicon glyphicon-search"
+                            ><svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              fill="currentColor"
+                              class="bi bi-search"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                              ></path></svg
+                          ></span>
+                        </button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="filter_main">
+                  <button fdprocessedid="6pevp">
+                    <span
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-funnel"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2z"
+                        ></path></svg
+                    ></span>
+                    Filter
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="listing_main" style="overflow-x: scroll">
+                <table>
+                  <thead>
+                    <tr>
+                      <th><input type="checkbox" /></th>
+                      <th class="vendor_tabel">
+                  User ID
+                        <img src="images/ascending_descending.jpg" alt="" />
+                      </th>
+                      <th class="vendor_tabel">
+                        Employee ID
+                        <img src="images/ascending_descending.jpg" alt="" />
+                      </th>
+                      <th class="vendor_tabel">
+                        Contact Name
+                        <img src="images/ascending_descending.jpg" alt="" />
+                      </th>
+                      <th class="vendor_tabel">
+                         Departments
+                        <img src="images/ascending_descending.jpg" alt="" />
+                      </th>
+                      <th class="vendor_tabel">
+                        Employee Role
+                        <img src="images/ascending_descending.jpg" alt="" />
+                      </th>
+                      <th class="vendor_tabel">
+                        Email ID
+                        <img src="images/ascending_descending.jpg" alt="" />
+                      </th>
+                      <th class="vendor_tabel">
+                        Contact Number
+                        <img src="images/ascending_descending.jpg" alt="" />
+                      </th>
+                      <th class="vendor_tabel">
+                        Assigned Geography
+                        <img src="images/ascending_descending.jpg" alt="" />
+                      </th>
+                      <th class="vendor_tabel">
+                        Action
+                        <img src="images/ascending_descending.jpg" alt="" />
+                      </th>
+                   
+                      <th class="vendor_tabel">
+                        Status
+                        <img src="images/ascending_descending.jpg" alt="" />
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="maine_tr_vendor">
+                      <td><input type="checkbox" /></td>
+                      <td>Emp001</td>
+                      <td>54321</td>
+                      <td>ARJUN SHARMA</td>
+                      <td>Engineering</td>
+                      <td>Project Manager</td>
+                      <td>arjun.sharma@gmail.com</td>
+                      <td>9876543210</td>
+                      <td>Andhra Pradesh</td>
+
+                      <td>
+                        <div class="toggle-container">
+                          <div class="lets_toggle_nobtn">
+                            <h6
+                              style="
+                                font-size: 14px;
+                                font-weight: 600;
+                                color: #555555;
+                              "
+                            >
+                              View | Edit |
+                            </h6>
+                            <input
+                              type="checkbox"
+                              class="toggle-checkbox"
+                              id="toggle"
+                            />
+                            <label for="toggle" class="toggle-switch">
+                              <div class="toggle-handle"></div>
+                            </label>
+                            <svg
+                              class="pencil_btn"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              fill="currentColor"
+                              class="bi bi-pencil"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Active</td>
+
+                      
+                    </tr>
+                    <tr class="maine_tr_vendor">
+                      <td><input type="checkbox" /></td>
+                      <td>Emp002</td>
+                      <td>67890</td>
+                      <td>VIKRAM SINGH</td>
+                      <td>Quality</td>
+                      <td>Electrical Engineer</td>
+                      <td>vikram.singh@gmail.com</td>
+                      <td>8765432109</td>
+                      <td>Arunachal Pradesh</td>
+                      <td>
+                        <div class="toggle-container">
+                          <div class="lets_toggle_nobtn">
+                            <h6
+                              style="
+                                font-size: 14px;
+                                font-weight: 600;
+                                color: #555555;
+                              "
+                            >
+                              View | Edit |
+                            </h6>
+                            <input
+                              type="checkbox"
+                              class="toggle-checkbox"
+                              id="toggle"
+                            />
+                            <label for="toggle" class="toggle-switch">
+                              <div class="toggle-handle"></div>
+                            </label>
+                            <svg
+                              class="pencil_btn"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              fill="currentColor"
+                              class="bi bi-pencil"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Active</td>
+                      
+
+                     
+                    </tr>
+                    <tr class="maine_tr_vendor">
+                      <td><input type="checkbox" /></td>
+                      <td>Emp003</td>
+                      <td>24680</td>
+                      <td>RAJAT KAPOOR</td>
+                      <td>Projects</td>
+                      <td>Inverter Technician</td>
+                      <td>rajat.kapoor@gmail.com</td>
+                      <td>7654321098</td>
+                      <td>Assam</td>
+                      <td>
+                        <div class="toggle-container">
+                          <div class="lets_toggle_nobtn">
+                            <h6
+                              style="
+                                font-size: 14px;
+                                font-weight: 600;
+                                color: #555555;
+                              "
+                            >
+                              View | Edit |
+                            </h6>
+                            <input
+                              type="checkbox"
+                              class="toggle-checkbox"
+                              id="toggle"
+                            />
+                            <label for="toggle" class="toggle-switch">
+                              <div class="toggle-handle"></div>
+                            </label>
+                            <svg
+                              class="pencil_btn"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              fill="currentColor"
+                              class="bi bi-pencil"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Active</td>
+                      
+
+                      
+                    </tr>
+  
+                    <tr class="maine_tr_vendor">
+                      <td><input type="checkbox" /></td>
+                      <td>Emp004</td>
+                      <td>13579</td>
+                      <td>SIDDHARTH PATEL</td>
+                      <td>Strategy</td>
+                      <td>Evacuation System Specialist</td>
+                      <td>siddharth.patel@gmail.com</td>
+                      <td>6543210987</td>
+                      <td>Bihar</td>
+                      <td>
+                        <div class="toggle-container">
+                          <div class="lets_toggle_nobtn">
+                            <h6
+                              style="
+                                font-size: 14px;
+                                font-weight: 600;
+                                color: #555555;
+                              "
+                            >
+                              View | Edit |
+                            </h6>
+                            <input
+                              type="checkbox"
+                              class="toggle-checkbox"
+                              id="toggle"
+                            />
+                            <label for="toggle" class="toggle-switch">
+                              <div class="toggle-handle"></div>
+                            </label>
+                            <svg
+                              class="pencil_btn"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              fill="currentColor"
+                              class="bi bi-pencil"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Active</td>
+
+                      
+                    </tr>
+                    <tr class="maine_tr_vendor">
+                      <td><input type="checkbox" /></td>
+                      <td>Emp005</td>
+                      <td>98765</td>
+                      <td>ARYAN VERMA</td>
+                      <td>EHS</td>
+                      <td>Power Transformer Engineer</td>
+                      <td>aryan.verma@gmail.com</td>
+                      <td>5432109876</td>
+                      <td>Chhattisgarh</td>
+                      <td>
+                        <div class="toggle-container">
+                          <div class="lets_toggle_nobtn">
+                            <h6
+                              style="
+                                font-size: 14px;
+                                font-weight: 600;
+                                color: #555555;
+                              "
+                            >
+                              View | Edit |
+                            </h6>
+                            <input
+                              type="checkbox"
+                              class="toggle-checkbox"
+                              id="toggle"
+                            />
+                            <label for="toggle" class="toggle-switch">
+                              <div class="toggle-handle"></div>
+                            </label>
+                            <svg
+                              class="pencil_btn"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              fill="currentColor"
+                              class="bi bi-pencil"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Active</td>
+
+                      
+                       
+                    </tr>
+                    <tr class="maine_tr_vendor">
+                      <td><input type="checkbox" /></td>
+                      <td>Emp006</td>
+                      <td>86420</td>
+                      <td>ANKIT JOSHI</td>
+                      <td>IT</td>
+                      <td>Module Supply Coordinator</td>
+                      <td>ankit.joshi@gmail.com</td>
+                      <td>4321098765</td>
+                      <td>Goa</td>
+                      <td>
+                        <div class="toggle-container">
+                          <div class="lets_toggle_nobtn">
+                            <h6
+                              style="
+                                font-size: 14px;
+                                font-weight: 600;
+                                color: #555555;
+                              "
+                            >
+                              View | Edit |
+                            </h6>
+                            <input
+                              type="checkbox"
+                              class="toggle-checkbox"
+                              id="toggle"
+                            />
+                            <label for="toggle" class="toggle-switch">
+                              <div class="toggle-handle"></div>
+                            </label>
+                            <svg
+                              class="pencil_btn"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              fill="currentColor"
+                              class="bi bi-pencil"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Active</td>
+
+                      
+                    </tr>
+  
+                    <tr class="maine_tr_vendor">
+                      <td><input type="checkbox" /></td>
+                      <td>Emp007</td>
+                      <td>35791</td>
+                      <td>ADITYA KUMAR</td>
+                      <td>Admin</td>
+                      <td>Logistics Manager</td>
+                      <td>aditya.kumar@gmail.com</td>
+                      <td>3210987654</td>
+                      <td>Gujarat</td>
+                      <td>
+                        <div class="toggle-container">
+                          <div class="lets_toggle_nobtn">
+                            <h6
+                              style="
+                                font-size: 14px;
+                                font-weight: 600;
+                                color: #555555;
+                              "
+                            >
+                              View | Edit |
+                            </h6>
+                            <input
+                              type="checkbox"
+                              class="toggle-checkbox"
+                              id="toggle"
+                            />
+                            <label for="toggle" class="toggle-switch">
+                              <div class="toggle-handle"></div>
+                            </label>
+                            <svg
+                              class="pencil_btn"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              fill="currentColor"
+                              class="bi bi-pencil"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Active</td>
+
+                      
+                    </tr>
+  
+                    <tr class="maine_tr_vendor">
+                      <td><input type="checkbox" /></td>
+                      <td>Emp008</td>
+                      <td>10203</td>
+                      <td>Sanjeev Kumar</td>
+                      <td>Procurement</td>
+                      <td>Inverter Technician</td>
+                      <td>sanjeev.kumar@gmail.com</td>
+                      <td>2109876543</td>
+                      <td>Haryana</td>
+                      <td>
+                        <div class="toggle-container">
+                          <div class="lets_toggle_nobtn">
+                            <h6
+                              style="
+                                font-size: 14px;
+                                font-weight: 600;
+                                color: #555555;
+                              "
+                            >
+                              View | Edit |
+                            </h6>
+                            <input
+                              type="checkbox"
+                              class="toggle-checkbox"
+                              id="toggle"
+                            />
+                            <label for="toggle" class="toggle-switch">
+                              <div class="toggle-handle"></div>
+                            </label>
+                            <svg
+                              class="pencil_btn"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              fill="currentColor"
+                              class="bi bi-pencil"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Active</td>
+
+                      
+                    </tr>
+  
+                    <tr class="maine_tr_vendor">
+                      <td><input type="checkbox" /></td>
+                      <td>Emp009</td>
+                      <td>13243</td>
+                      <td>Rohit Kumar</td>
+                      <td>HR</td>
+                      <td>Project Manager</td>
+                      <td>rohit.kumar@gmail.com</td>
+                      <td>1098765432</td>
+                      <td>Himachal Pradesh</td>
+                      <td>
+                        <div class="toggle-container">
+                          <div class="lets_toggle_nobtn">
+                            <h6
+                              style="
+                                font-size: 14px;
+                                font-weight: 600;
+                                color: #555555;
+                              "
+                            >
+                              View | Edit |
+                            </h6>
+                            <input
+                              type="checkbox"
+                              class="toggle-checkbox"
+                              id="toggle"
+                            />
+                            <label for="toggle" class="toggle-switch">
+                              <div class="toggle-handle"></div>
+                            </label>
+                            <svg
+                              class="pencil_btn"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              fill="currentColor"
+                              class="bi bi-pencil"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Active</td>
+                      
+                    </tr>
+  
+                
+                  </tbody>
+                </table>
+              </div>
+
+            <div class="pagination_outer">
+              <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">«</span>
+                      <span class="sr-only"></span>
+                    </a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">»</span>
+                      <span class="sr-only"></span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="maine_dropdown">
+              <p>Items per page:</p>
+              <select>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="5">6</option>
+                <option value="5">7</option>
+                <option value="5">8</option>
+                <option value="5">9</option>
+                <option value="5">10</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="top_remove">2024 Avaada Group . All Rights Reserved.</footer>
+
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      function showSuccessModal() {
+        // Hide the contact modal
+        $("#contactModal").modal("hide");
+        $(".hidemodal").hide();
+
+        // Show the success modal
+        $("#successModal").modal("show");
+
+        $(".close-btn").click(function () {
+          $(".successmodal").hide();
+          $("#successModal").modal({
+            backdrop: false,
+          });
+          location.reload(true);
+        });
+      }
+    </script>
+    <script>
+      function validateForm() {
+        var contactName = document.getElementById("contactName");
+        var contactNumber = document.getElementById("contactNumber");
+        var vendorName = document.getElementById("vendorName");
+        var vendorEmail = document.getElementById("vendorEmail");
+        var onboardingType = document.getElementById("onboardingType");
+
+        var contactNameError = document.getElementById("contactNameError");
+        var contactNumberError = document.getElementById("contactNumberError");
+        var vendorNameError = document.getElementById("vendorNameError");
+        var vendorEmailError = document.getElementById("vendorEmailError");
+        var onboardingTypeError = document.getElementById(
+          "onboardingTypeError"
+        );
+
+        // Reset previous error messages
+        contactNameError.textContent = "";
+        contactNumberError.textContent = "";
+        vendorNameError.textContent = "";
+        vendorEmailError.textContent = "";
+        onboardingTypeError.textContent = "";
+
+        // Validation logic
+        if (!contactName.checkValidity()) {
+          contactNameError.textContent = "Please enter the contact name.";
+        }
+
+        if (!contactNumber.checkValidity()) {
+          contactNumberError.textContent =
+            "Please enter a valid 10-digit mobile number.";
+        }
+
+        if (!vendorName.checkValidity()) {
+          vendorNameError.textContent = "Please enter the vendor name.";
+        }
+
+        if (!vendorEmail.checkValidity()) {
+          vendorEmailError.textContent = "Please enter a valid email address.";
+        }
+
+        if (!onboardingType.checkValidity()) {
+          onboardingTypeError.textContent =
+            "Please select the onboarding type.";
+        }
+
+        // You can add additional validation logic here
+
+        // If all validations pass, you can submit the form or perform further actions
+        if (
+          contactName.checkValidity() &&
+          contactNumber.checkValidity() &&
+          vendorName.checkValidity() &&
+          vendorEmail.checkValidity() &&
+          onboardingType.checkValidity()
+        ) {
+          // Submit the form or perform other actions
+          showSuccessModal();
+        }
+      }
+    </script>
+  </body>
+</html>

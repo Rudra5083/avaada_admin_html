@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avaada</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-2">
+            <a href="existing_vendors.html"
+              ><img src="images/logo.png" alt="" height="51""></a
+            >
+          </div>
+
+          <div class="col-md-5 ms-auto invites_log1">
+            <div class="invites"></div>
+
+            <div class="notification">
+              <a
+                class="dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-bell-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"
+                  />
+                </svg>
+
+                <div class="circle">3</div>
+              </a>
+
+              <div class="dropdown">
+                <div class="notifications dropdown-menu">
+                  <div class="notifications_heading justify-content-between">
+                    Notifications
+
+                    <span>2 New</span>
+                  </div>
+
+                  <div class="notifications_inside">
+                    <ul>
+                      <li>
+                        <a href="#"
+                          >New vendor details submitted: Vendor Code VND205</a
+                        >
+                        <div class="time_outer">
+                          <img src="images/time.png" alt="" /> 30 Min Ago
+                        </div>
+                      </li>
+
+                      <li>
+                        <a href="#"
+                          >Vendor details received: Vendor Code VND203, Name -
+                          MechCorp Engineering.</a
+                        >
+                        <div class="time_outer">
+                          <img src="images/time.png" alt="" /> 47 Min Ago
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="user_box">
+              <img src="images/userkumar.png" alt="" />
+              <a
+                class="dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Rahul Verma
+              </a>
+
+              <div class="dropdown">
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Profile</a></li>
+                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                  <li>
+                    <a class="dropdown-item" href="index.html">Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-2 left_menu">
+            <ul>
+              <li><a href="#">Dashboard</a></li>
+              <li><a href="#">My Master Data
+            </a></li>
+            <li><a href="Admin_existing_vendors.html">Vendor</a></li>
+            <li><a href="#">Accounts</a></li>
+              <li><a href="#">Configuration</a></li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-10">
+           
+
+            <!-- Create Employee Modal -->
+            <div class="form-container">
+              <div
+                class="modal vendor_modal hidemodal"
+                id="contactModal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="contactModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content1">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="contactModalLabel">
+                        Create Employee
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body" style="display: flex;
+                    max-width: 100%;
+                    justify-content:center">
+                      <form id="vendorForm">
+                        <div class="lets_modal_vendor">
+                          <div class="lets_select_sme">
+                            <label class="mb-1 text-dark"
+                              >Employee Name
+                              <span class="required">*</span></label
+                            >
+                            <input
+                              type="text"
+                              id="contactName"
+                              class="form-control form_h_modal"
+                              placeholder="Person Name"
+                              required
+                            />
+                            <div
+                              class="error-message"
+                              id="contactNameError"
+                            ></div>
+                          </div>
+                          <div class="lets_select_sme">
+                            <label class="mb-1 text-dark"
+                              >Email ID <span class="required">*</span></label
+                            >
+                            <input
+                              type="email"
+                              id="vendorEmail"
+                              class="form-control form_h_modal"
+                              placeholder="Enter Email ID"
+                              required
+                            />
+                            <div
+                              class="error-message"
+                              id="vendorEmailError"
+                            ></div>
+                          </div>
+                          <div class="lets_select_sme">
+                            <label class="mb-1 text-dark"
+                              >Phone Number
+                              <span class="required">*</span></label
+                            >
+                            <input
+                              type="tel"
+                              id="contactNumber"
+                              minlength="10"
+                              maxlength="10"
+                              class="form-control form_h_modal"
+                              placeholder="Enter Phone Number"
+                              pattern="[0-9]{10}"
+                              title="Please enter a valid 10-digit mobile number"
+                              required
+                            />
+                            <div
+                              class="error-message"
+                              id="contactNumberError"
+                            ></div>
+                          </div>
+                        </div>
+                        <div class="lets_modal_vendor">
+                          <div class="lets_select_sme">
+                            <label class="mb-1 text-dark"
+                              >Alternate Mobile Number
+                              <span class="required">*</span></label
+                            >
+                            <input
+                              type="tel"
+                              id="contactNumber"
+                              minlength="10"
+                              maxlength="10"
+                              class="form-control form_h_modal"
+                              placeholder="Enter Phone Number"
+                              pattern="[0-9]{10}"
+                              title="Please enter a valid 10-digit mobile number"
+                              required
+                            />
+                            <div
+                              class="error-message"
+                              id="contactNumberError"
+                            ></div>
+                          </div>
+                          <div class="lets_select_sme">
+                            <label class="mb-1 text-dark"
+                              >Date of Birth
+                              <span class="required">*</span></label
+                            >
+                            <input
+                              type="text"
+                              id="contactName"
+                              class="form-control form_h_modal"
+                              placeholder="Please Enter the Date of Birth"
+                              required
+                            />
+                            <div
+                              class="error-message"
+                              id="contactNameError"
+                            ></div>
+                          </div>
+                          <div class="lets_select_sme">
+                            <label class="mb-1 text-dark"
+                              >Employee ID
+                              <span class="required">*</span></label
+                            >
+                            <input
+                              type="text"
+                              id="contactName"
+                              class="form-control form_h_modal"
+                              placeholder="Person Name"
+                              required
+                            />
+                            <div
+                              class="error-message"
+                              id="contactNameError"
+                            ></div>
+                          </div>
+                          
+                      
+                        </div>
+                        <div class="lets_modal_vendor">
+                        <div class="lets_select_sme1">
+                            <label class="mb-1 text-dark"
+                              >Department <span class="required">*</span></label
+                            >
+
+                            <select
+                              id="onboardingType"
+                              class="form-select"
+                              aria-label="Default select example"
+                            >
+                              <option selected>Engineering</option>
+                              <option value="1">Quality</option>
+                              <option value="2">Projects</option>
+                              <option value="3">Strategy</option>
+                              <option value="4">EHS</option>
+                              <option value="5">IT</option>
+                              <option value="6">Admin</option>
+                            </select>
+                            <div
+                              class="error-message"
+                              id="vendorEmailError"
+                            ></div>
+                          </div>
+                          <div class="Newvendor_category">
+                            <label class="mb-1 text-dark"
+                              >Role <span class="required">*</span></label
+                            >
+  
+                            <select
+                              id="onboardingType"
+                              class="form-select form_selectedonboarding"
+                              aria-label="Default select example"
+                            >
+                              <option selected>Select</option>
+                              <option value="1">Select</option>
+                              <option value="2">Select</option>
+                            </select>
+                            <div
+                              class="error-message"
+                              id="onboardingTypeError"
+                            ></div>
+                          </div>
+                        </div>
+                        
+                 
+                        <div class="clear_btn_status">
+                          <button
+                            type="button"
+                            class="btn clear_btn"
+                            data-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-success save_next_btn"
+                            onclick="validateForm()"
+                          >
+                            Submit
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Create Employee upload Excel file -->
+            <div class="form-container">
+              <div
+                class="modal vendor_modal hidemodal"
+                id="uploadexcelfile"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="#uploadexcelfileLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog" style="display: flex;
+                max-width: 100%;
+                justify-content:center" role="document">
+                  <div class="modal-content1">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="#uploadexcelfileLabel">
+                        Create Employee (Upload Excel File)
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="vendorForm">
+                        <div class="lets_modal_vendor2">
+                          <p>Upload Excel Template</p>
+                          <div class="mb-3 d-flex">
+                            <input class="form-control form-h choose" type="file" id="">
+                            <button class="upload_excelfile_btn">
+                                Download Excel Template
+                            </button>
+                          </div>
+                         
+                         
+                        <div class="clear_btn_status">
+                          <button
+                            type="button"
+                            class="btn clear_btn"
+                            data-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-success save_next_btn"
+                            onclick="validateForm()"
+                          >
+                            Submit
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="heading_search_outer d-flex">
+              <div class="main_heading_lets">
+                <h4 class="vendor"><a href="Employeecreation.html">Employee Creation</a></h4>  
+                <h4 class="vendor3">Category Management</h4>
+                <h4 class="vendor "><a href="Maping_priority_setup_management.html">Status & Mapping Management</a></h4>
+                <h4 class="vendor">Employee Management</h4>
+
+             
+              </div>
+
+              
+            </div>
+            
+
+<div class="category_outer">
+
+ <p></p>
+
+
+ <div class="category_in">
+<div class="category_box">
+
+  <div class="heading_plus">
+  <h3>Category</h3>    <button class="plus-btn" data-bs-toggle="modal" data-bs-target="#myModal">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+    </svg>
+  </button>
+</div>
+<!-- Add New Category Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add New Category</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="lets_select_sme">
+          <label class="mb-1 text-dark">Enter Category Name <span class="required">*</span></label>
+          <input type="text" id="vendorName" class="form-control form_h_modal" placeholder="Enter Category Name" required />
+          <div class="error-message" id="vendorNameError"></div>
+        </div>
+      </div>
+      <div class="clear_btn_status">
+        <button type="button" class="btn clear_btn" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success save_next_btn" onclick="validateForm()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Success Modal -->
+<div class="modal fade" id="successModal1" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="reloadPage()"></button>
+      </div>
+      <div class="modal-body_lets">
+        <img src="images/check-circle.png" alt="" />
+        <h5 class="modal-title" id="successModalLabel"><p>Category has been created successfully!!</p></h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="category_listing ">
+  <input type="checkbox"> 
+  Electrical
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+<div class="category_listing ">
+  <input type="checkbox"> 
+  Civil
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+<div class="category_listing ">
+  <input type="checkbox"> 
+  Mechanical
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+<div class="category_listing ">
+  <input type="checkbox"> 
+  Instrumentation
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+<div class="category_listing ">
+  <input type="checkbox"> 
+  Consultants
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+<div class="category_listing ">
+  <input type="checkbox"> 
+  Architects
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+
+<div class="category_listing ">
+  <input type="checkbox"> 
+  EPC
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+</div>
+
+
+<div class="category_box">
+
+  <div class="heading_plus">
+    <h3>Sub-Category</h3>
+    <button class="plus-btn" data-bs-toggle="modal" data-bs-target="#subCategoryModal">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+      </svg>
+    </button>
+</div>
+<!-- Sub-Category Modal -->
+
+<div class="modal fade" id="subCategoryModal" tabindex="-1" aria-labelledby="subCategoryModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="subCategoryModalLabel">Add New Sub-Category</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <div class="lets_select_sme">
+            <label class="mb-1 text-dark"> Category <span class="required">*</span></label>
+            <select id="categorySelect" class="form-select" required>
+              <option value="" disabled selected>Select</option>
+              <option value="category1">Electrical
+              </option>
+              <option value="category2">Civil</option>
+              <option value="category3">Mechanical</option>
+              <option value="category4">Instrumentation
+              </option>
+              <option value="category5">Consultants</option>
+              <option value="category6">Architects</option>
+              <option value="category7">EPC</option>
+              <!-- Add more options as needed -->
+            </select>
+            <div class="error-message" id="categorySelectError"></div>
+          </div>
+          <div class="lets_select_sme">
+            <label class="mb-1 text-dark">Sub-Category <span class="required">*</span></label>
+            <input type="text" id="vendorName" class="form-control form_h_modal" placeholder="Enter Sub-Category" required />
+            <div class="error-message" id="vendorNameError"></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn clear_btn" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success save_next_btn" onclick="validateForm()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Add New Sub-Category sucess modal -->
+
+<div class="modal fade" id="successModal1" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+ 
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="reloadPage()"></button>
+
+      </div>
+      <div class="modal-body_lets">
+        <img src="images/check-circle.png" alt="" />
+        <h5 class="modal-title" id="successModalLabel"><p>Sub-Category has been created successfully!</p>
+    
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="category_listing ">
+
+  Bos Electrical
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+<div class="category_listing ">
+  Inverter
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+<div class="category_listing ">
+  Evacuation System
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+<div class="category_listing ">
+  Power Transformer
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+<div class="category_listing ">
+  Module Supply
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+<div class="category_listing ">
+  Logistics
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+
+<div class="category_listing ">
+  Module Inspection
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="category_box">
+
+  <div class="heading_plus">
+    <h3>Department</h3>    <button class="plus-btn" data-bs-toggle="modal" data-bs-target="#departmentModal">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+      </svg>
+    </button>
+  </div>
+       <!-- Department Modal -->
+  <div class="modal fade" id="departmentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+ 
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add New Departments</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="lets_select_sme">
+            <label class="mb-1 text-dark">Enter Departments Name <span class="required">*</span></label>
+            <input type="text" id="departmentName" class="form-control form_h_modal" placeholder=" Enter Departments Name*" required />
+            <div class="error-message" id="departmentNameError"></div>
+          </div>
+        </div>
+        <div class="clear_btn_status">
+          <button type="button" class="btn clear_btn" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success save_next_btn" onclick="submitForm()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- Modify the close button to trigger reload -->
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="reloadPage()"></button>
+      </div>
+      <div class="modal-body_lets">
+        <img src="images/check-circle.png" alt="" />
+        <h5 class="modal-title" id="successModalLabel"><p>Departments has been created successfully!</p>
+    
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="category_listing ">
+  <input type="checkbox"> 
+  Engineering
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+<div class="category_listing ">
+  <input type="checkbox"> 
+  Quality
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+<div class="category_listing ">
+  <input type="checkbox"> 
+  Projects
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+<div class="category_listing ">
+  <input type="checkbox"> 
+  Strategy
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+<div class="category_listing ">
+  <input type="checkbox"> 
+  EHS
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+<div class="category_listing ">
+  <input type="checkbox"> 
+  IT
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+
+<div class="category_listing ">
+  <input type="checkbox"> 
+  Admin
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<div class="category_box">
+
+  <div class="container mt-5">
+    <!-- Role Heading with Plus Button -->
+    <div class="heading_plus">
+      <h3>Role</h3>
+      <button class="plus-btn" data-bs-toggle="modal" data-bs-target="#roleModal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Role Modal -->
+    <div class="modal fade" id="roleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add New Role</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <div class="lets_select_sme">
+                <label class="mb-1 text-dark"> Department <span class="required">*</span></label>
+                <select id="categorySelect" class="form-select" required>
+                  <option value="" disabled selected>Select</option>
+                  <option value="category1">Engineering
+                  </option>
+                  <option value="category2">Quality</option>
+                  <option value="category3">Projects</option>
+                  <option value="category4">Strategy
+                  </option>
+                  <option value="category5">EHS</option>
+                  <option value="category6">IT</option>
+                  <option value="category7">Admin</option>
+                  <!-- Add more options as needed -->
+                </select>
+                <div class="error-message" id="categorySelectError"></div>
+              </div>
+              <div class="lets_select_sme">
+                <label class="mb-1 text-dark">Enter Role Name <span class="required">*</span></label>
+                <input type="text" id="vendorName" class="form-control form_h_modal" placeholder="Enter Role Name" required />
+                <div class="error-message" id="vendorNameError"></div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn clear_btn" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-success save_next_btn" >Submit</button> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="category_listing ">
+  Project Manager
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+<div class="category_listing ">
+  Electrical Engineer
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+<div class="category_listing ">
+  Inverter Technician
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+<div class="category_listing ">
+  Evacuation System Specialist
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+<div class="category_listing ">
+  Power Transformer Engineer
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+<div class="category_listing ">
+  Module Supply Coordinator
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+
+<div class="category_listing ">
+  Logistics Manager
+  
+  <span class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+  </svg></span>
+
+  <span class="hold"></span><a href="#"><img src="images/hold_1.png" alt=""></a></span>
+
+
+</div>
+
+
+
+</div>
+
+
+ </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="top_remove">2024 Avaada Group . All Rights Reserved.</footer>
+
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+     <!-- Bootstrap JS and Popper.js scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+    
+    <script>
+      function showSuccessModal() {
+        // Hide the contact modal
+        $("#contactModal").modal("hide");
+        $(".hidemodal").hide();
+
+        // Show the success modal
+        $("#successModal").modal("show");
+
+        $(".close-btn").click(function () {
+          $(".successmodal").hide();
+          $("#successModal").modal({
+            backdrop: false,
+          });
+          location.reload(true);
+        });
+      }
+    </script>
+    <script>
+      function validateForm() {
+        var contactName = document.getElementById("contactName");
+        var contactNumber = document.getElementById("contactNumber");
+        var vendorName = document.getElementById("vendorName");
+        var vendorEmail = document.getElementById("vendorEmail");
+        var onboardingType = document.getElementById("onboardingType");
+
+        var contactNameError = document.getElementById("contactNameError");
+        var contactNumberError = document.getElementById("contactNumberError");
+        var vendorNameError = document.getElementById("vendorNameError");
+        var vendorEmailError = document.getElementById("vendorEmailError");
+        var onboardingTypeError = document.getElementById(
+          "onboardingTypeError"
+        );
+
+        // Reset previous error messages
+        contactNameError.textContent = "";
+        contactNumberError.textContent = "";
+        vendorNameError.textContent = "";
+        vendorEmailError.textContent = "";
+        onboardingTypeError.textContent = "";
+
+        // Validation logic
+        if (!contactName.checkValidity()) {
+          contactNameError.textContent = "Please enter the contact name.";
+        }
+
+        if (!contactNumber.checkValidity()) {
+          contactNumberError.textContent =
+            "Please enter a valid 10-digit mobile number.";
+        }
+
+        if (!vendorName.checkValidity()) {
+          vendorNameError.textContent = "Please enter the vendor name.";
+        }
+
+        if (!vendorEmail.checkValidity()) {
+          vendorEmailError.textContent = "Please enter a valid email address.";
+        }
+
+        if (!onboardingType.checkValidity()) {
+          onboardingTypeError.textContent =
+            "Please select the onboarding type.";
+        }
+
+    
+        if (
+          contactName.checkValidity() &&
+          contactNumber.checkValidity() &&
+          vendorName.checkValidity() &&
+          vendorEmail.checkValidity() &&
+          onboardingType.checkValidity()
+        ) {
+     
+          showSuccessModal();
+        }
+      }
+    </script>
+<script>
+  function validateForm() {
+    var categoryInput = $("#vendorName");
+    var vendorNameError = $("#vendorNameError");
+
+    vendorNameError.text("");
+
+    if (!categoryInput.val().trim()) {
+      vendorNameError.text("Please enter the category name.");
+      return;
+    }
+
+ 
+    $("#myModal").modal("hide"); 
+    $("#successModal").modal("show"); // Show the success modal
+  }
+
+  // Function to handle "View All Vendors" button click
+  function viewAllVendors() {
+    // Add logic to view all vendors
+  }
+
+  // Event listener for the second modal (shown.bs.modal event)
+  $('#successModal').on('shown.bs.modal', function () {
+    $('#myModal').modal('hide'); // Close the first modal when the second modal is shown
+  });
+</script>
+<script>
+  document.getElementById('successModal').addEventListener('show.bs.modal', function () {
+    var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+    myModal.hide();
+  });
+</script>
+
+<!-- Add Bootstrap JS link -->
+
+<script>
+  function validateForm() {
+    // Your form validation logic here
+
+    // If validation passes, close the #subCategoryModal
+    $('#subCategoryModal').modal('hide');
+    $('#myModal').modal('hide');
+    // Show the success modal
+    $('#successModal1').modal('show');
+  }
+</script>
+<script>
+  function reloadPage() {
+    location.reload();
+  }
+</script>
+<script>
+  // Add an event listener to the "show.bs.modal" event of the "Success" modal
+  document.getElementById('successModal').addEventListener('show.bs.modal', function () {
+    // Close the "Add New Category" modal
+    var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+    myModal.hide();
+  });
+</script>
+<script>
+  document.getElementById('successModal1').addEventListener('show.bs.modal', function () {
+    var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+    myModal.hide();
+  });
+
+  function reloadPage() {
+    location.reload();
+  }
+</script>
+<script>
+  document.getElementById('successModal1').addEventListener('show.bs.modal', function () {
+    var myModal1 = new bootstrap.Modal(document.getElementById('myModal1'));
+    myModal1.hide();
+  });
+
+  function reloadPage() {
+    location.reload();
+  }
+</script>
+<script>
+      function submitForm() {
+        // Example validation (replace with your actual validation logic)
+        var departmentName = document.getElementById('departmentName').value;
+        if (!departmentName) {
+          document.getElementById('departmentNameError').innerText = 'Please enter a department name';
+          return;
+        }
+
+        // Example form submission (replace with your actual form submission logic)
+        // Assuming form submission is successful, show the success modal
+        $('#successModal').modal('show');
+        
+        // Clear any previous error messages
+        document.getElementById('departmentNameError').innerText = '';
+      }
+    </script>
+     <script>
+      $('#successModal').on('show.bs.modal', function (e) {
+        // Close the departmentModal when successModal is opened
+        $('#departmentModal').modal('hide');
+      });
+
+      function submitForm() {
+        // Example validation (replace with your actual validation logic)
+        var departmentName = document.getElementById('departmentName').value;
+        if (!departmentName) {
+          document.getElementById('departmentNameError').innerText = 'Please enter a department name';
+          return;
+        }
+
+        // Example form submission (replace with your actual form submission logic)
+        // Assuming form submission is successful, show the success modal
+        $('#successModal').modal('show');
+        
+        // Clear any previous error messages
+        document.getElementById('departmentNameError').innerText = '';
+      }
+      
+    </script>
+    <script>
+  function submitForm() {
+    // Example validation (replace with your actual validation logic)
+    var departmentName = document.getElementById('departmentName').value;
+    if (!departmentName) {
+      document.getElementById('departmentNameError').innerText = 'Please enter a department name';
+      return;
+    }
+
+    // Example form submission (replace with your actual form submission logic)
+    // Assuming form submission is successful, show the success modal
+    $('#successModal').modal('show');
+    
+    // Clear any previous error messages
+    document.getElementById('departmentNameError').innerText = '';
+  }
+
+  function reloadPage() {
+    // Hard reload the page
+    location.reload(true);
+  }
+</script>
+<script>
+  function saveRole() {
+    // Replace this function with your logic to save the role
+    // For demonstration, let's just close the modal
+    $('#roleModal').modal('hide');
+  }
+</script>
+  </body>
+</html>
