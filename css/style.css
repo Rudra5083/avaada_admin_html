@@ -1152,7 +1152,7 @@ a.view_submit_done {
   position: relative;
   width: 60px;
   height: 30px;
-  background-color: green;
+  background-color: red !important;
   border-radius: 15px;
   cursor: pointer;
   margin: 7px;
@@ -1170,7 +1170,7 @@ a.view_submit_done {
 }
 
 .toggle-checkbox:checked + .toggle-switch {
-  background-color: red;
+  background-color: green !important;
 }
 
 .toggle-checkbox:checked + .toggle-switch .toggle-handle {
