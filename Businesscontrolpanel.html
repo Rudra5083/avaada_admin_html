@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avaada</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-2">
+            <a href="existing_vendors.html"
+              ><img src="images/logo.png" alt="" height="51""></a
+            >
+          </div>
+
+          <div class="col-md-5 ms-auto invites_log1">
+            <div class="invites"></div>
+
+            <div class="notification">
+              <a
+                class="dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-bell-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"
+                  />
+                </svg>
+
+                <div class="circle">3</div>
+              </a>
+
+              <div class="dropdown">
+                <div class="notifications dropdown-menu">
+                  <div class="notifications_heading justify-content-between">
+                    Notifications
+
+                    <span>2 New</span>
+                  </div>
+
+                  <div class="notifications_inside">
+                    <ul>
+                      <li>
+                        <a href="#"
+                          >New vendor details submitted: Vendor Code VND205</a
+                        >
+                        <div class="time_outer">
+                          <img src="images/time.png" alt="" /> 30 Min Ago
+                        </div>
+                      </li>
+
+                      <li>
+                        <a href="#"
+                          >Vendor details received: Vendor Code VND203, Name -
+                          MechCorp Engineering.</a
+                        >
+                        <div class="time_outer">
+                          <img src="images/time.png" alt="" /> 47 Min Ago
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="user_box">
+              <img src="images/userkumar.png" alt="" />
+              <a
+                class="dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Rahul Verma
+              </a>
+
+              <div class="dropdown">
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Profile</a></li>
+                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                  <li>
+                    <a class="dropdown-item" href="index.html">Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-2 left_menu">
+            <ul>
+              <li><a href="#">Dashboard</a></li>
+              <li><a href="#">My Master Data </a></li>
+              <li><a href="Admin_existing_vendors.html">Vendor</a></li>
+              <li><a href="#">Accounts</a></li>
+              <li><a href="#">Configuration</a></li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-10">
+            <!-- Create Employee Modal -->
+            <div class="form-container">
+              <div
+                class="modal vendor_modal hidemodal"
+                id="contactModal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="contactModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content1">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="contactModalLabel">
+                        Create Employee
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div
+                      class="modal-body"
+                      style="
+                        display: flex;
+                        max-width: 100%;
+                        justify-content: center;
+                      "
+                    >
+                      <form id="vendorForm">
+                        <div class="lets_modal_vendor">
+                          <div class="lets_select_sme">
+                            <label class="mb-1 text-dark"
+                              >Employee Name
+                              <span class="required">*</span></label
+                            >
+                            <input
+                              type="text"
+                              id="contactName"
+                              class="form-control form_h_modal"
+                              placeholder="Person Name"
+                              required
+                            />
+                            <div
+                              class="error-message"
+                              id="contactNameError"
+                            ></div>
+                          </div>
+                          <div class="lets_select_sme">
+                            <label class="mb-1 text-dark"
+                              >Email ID <span class="required">*</span></label
+                            >
+                            <input
+                              type="email"
+                              id="vendorEmail"
+                              class="form-control form_h_modal"
+                              placeholder="Enter Email ID"
+                              required
+                            />
+                            <div
+                              class="error-message"
+                              id="vendorEmailError"
+                            ></div>
+                          </div>
+                          <div class="lets_select_sme">
+                            <label class="mb-1 text-dark"
+                              >Phone Number
+                              <span class="required">*</span></label
+                            >
+                            <input
+                              type="tel"
+                              id="contactNumber"
+                              minlength="10"
+                              maxlength="10"
+                              class="form-control form_h_modal"
+                              placeholder="Enter Phone Number"
+                              pattern="[0-9]{10}"
+                              title="Please enter a valid 10-digit mobile number"
+                              required
+                            />
+                            <div
+                              class="error-message"
+                              id="contactNumberError"
+                            ></div>
+                          </div>
+                        </div>
+                        <div class="lets_modal_vendor">
+                          <div class="lets_select_sme">
+                            <label class="mb-1 text-dark"
+                              >Alternate Mobile Number
+                              <span class="required">*</span></label
+                            >
+                            <input
+                              type="tel"
+                              id="contactNumber"
+                              minlength="10"
+                              maxlength="10"
+                              class="form-control form_h_modal"
+                              placeholder="Enter Phone Number"
+                              pattern="[0-9]{10}"
+                              title="Please enter a valid 10-digit mobile number"
+                              required
+                            />
+                            <div
+                              class="error-message"
+                              id="contactNumberError"
+                            ></div>
+                          </div>
+                          <div class="lets_select_sme">
+                            <label class="mb-1 text-dark"
+                              >Date of Birth
+                              <span class="required">*</span></label
+                            >
+                            <input
+                              type="text"
+                              id="contactName"
+                              class="form-control form_h_modal"
+                              placeholder="Please Enter the Date of Birth"
+                              required
+                            />
+                            <div
+                              class="error-message"
+                              id="contactNameError"
+                            ></div>
+                          </div>
+                          <div class="lets_select_sme">
+                            <label class="mb-1 text-dark"
+                              >Employee ID
+                              <span class="required">*</span></label
+                            >
+                            <input
+                              type="text"
+                              id="contactName"
+                              class="form-control form_h_modal"
+                              placeholder="Person Name"
+                              required
+                            />
+                            <div
+                              class="error-message"
+                              id="contactNameError"
+                            ></div>
+                          </div>
+                        </div>
+                        <div class="lets_modal_vendor">
+                          <div class="lets_select_sme1">
+                            <label class="mb-1 text-dark"
+                              >Department <span class="required">*</span></label
+                            >
+
+                            <select
+                              id="onboardingType"
+                              class="form-select"
+                              aria-label="Default select example"
+                            >
+                              <option selected>Engineering</option>
+                              <option value="1">Quality</option>
+                              <option value="2">Projects</option>
+                              <option value="3">Strategy</option>
+                              <option value="4">EHS</option>
+                              <option value="5">IT</option>
+                              <option value="6">Admin</option>
+                            </select>
+                            <div
+                              class="error-message"
+                              id="vendorEmailError"
+                            ></div>
+                          </div>
+                          <div class="Newvendor_category">
+                            <label class="mb-1 text-dark"
+                              >Role <span class="required">*</span></label
+                            >
+
+                            <select
+                              id="onboardingType"
+                              class="form-select form_selectedonboarding"
+                              aria-label="Default select example"
+                            >
+                              <option selected>Select</option>
+                              <option value="1">Select</option>
+                              <option value="2">Select</option>
+                            </select>
+                            <div
+                              class="error-message"
+                              id="onboardingTypeError"
+                            ></div>
+                          </div>
+                        </div>
+
+                        <div class="clear_btn_status">
+                          <button
+                            type="button"
+                            class="btn clear_btn"
+                            data-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-success save_next_btn"
+                            onclick="validateForm()"
+                          >
+                            Submit
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Create Employee upload Excel file -->
+            <div class="form-container">
+              <div
+                class="modal vendor_modal hidemodal"
+                id="uploadexcelfile"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="#uploadexcelfileLabel"
+                aria-hidden="true"
+              >
+                <div
+                  class="modal-dialog"
+                  style="
+                    display: flex;
+                    max-width: 100%;
+                    justify-content: center;
+                  "
+                  role="document"
+                >
+                  <div class="modal-content1">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="#uploadexcelfileLabel">
+                        Create Employee (Upload Excel File)
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="vendorForm">
+                        <div class="lets_modal_vendor2">
+                          <p>Upload Excel Template</p>
+                          <div class="mb-3 d-flex">
+                            <input
+                              class="form-control form-h choose"
+                              type="file"
+                              id=""
+                            />
+                            <button class="upload_excelfile_btn">
+                              Download Excel Template
+                            </button>
+                          </div>
+
+                          <div class="clear_btn_status">
+                            <button
+                              type="button"
+                              class="btn clear_btn"
+                              data-dismiss="modal"
+                            >
+                              Close
+                            </button>
+                            <button
+                              type="button"
+                              class="btn btn-success save_next_btn"
+                              onclick="validateForm()"
+                            >
+                              Submit
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="heading_search_outer">
+                <div class="main_heading_lets">
+                  <h4 class="vendor">
+                    <a href="Employeecreation.html">Employee Creation</a>
+                  </h4>
+                  <h4 class="vendor">
+                    <a href="category_management.html">Category Management</a>
+                  </h4>
+                  <h4 class="vendor">
+                    <a href="Maping_priority_setup_management.html"
+                      >Status & Mapping Management</a
+                    >
+                  </h4>
+                  <h4 class="vendor3">
+                    <a href="Controlpanel.html">Control Panel</a>
+                  </h4>
+                </div>
+                <button
+                  style="background-color: alicebluel; text-decoration: none"
+                  type="button"
+                  class="btn btn-light"
+                  fdprocessedid="obejzu"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-arrow-left"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"
+                    />
+                  </svg>
+                  <a
+                    style="text-decoration: none !important; color: black"
+                    href="Controlpanel.html"
+                    >Back</a
+                  >
+                </button>
+              </div>
+
+              <div class="category_outer">
+                <div>
+                  <div class="listing_main" style="overflow-x: scroll">
+                    <table>
+                      <thead class="vendor_tabel_information">
+                        <tr>
+                          <th class="vendor_tabel_information">
+                            Business and Contact Information
+                          </th>
+                          <th class="vendor_tabel_information">Display</th>
+                          <th class="vendor_tabel_information">
+                            Mandatory/Non-Mandatory
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="maine_tr_vendor">
+                          <td>Category</td>
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="maine_tr_vendor">
+                          <td>Business Name</td>
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="maine_tr_vendor">
+                          <td>PAN Card No</td>
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="maine_tr_vendor">
+                          <td>GSTIN No</td>
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="maine_tr_vendor">
+                          <td>GSTIN State</td>
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="maine_tr_vendor">
+                          <td>Email ID</td>
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr class="maine_tr_vendor">
+                          <td>Mobile Number</td>
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr class="maine_tr_vendor">
+                          <td>Address</td>
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr class="maine_tr_vendor">
+                          <td>MSME Status</td>
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr class="maine_tr_vendor">
+                          <td>Organisation Chart</td>
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="maine_tr_vendor">
+                          <td>Business Nature/Type</td>
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="maine_tr_vendor">
+                          <td>Quality Policy</td>
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="maine_tr_vendor">
+                          <td>Others</td>
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="maine_tr_vendor">
+                          <td>Add Attachment</td>
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+
+                          <td>
+                            <div class="toggle-container">
+                              <div class="lets_toggle_nobtn">
+                                <input
+                                  type="checkbox"
+                                  class="toggle-checkbox"
+                                  id="toggle"
+                                />
+                                No
+                                <label for="toggle" class="toggle-switch">
+                                  <div class="toggle-handle"></div>
+                                </label>
+                                Yes
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="clear_btn_status_block">
+                    <button
+                      type="button"
+                      class="btn clear_btn"
+                      data-dismiss="modal"
+                      fdprocessedid="0y9izm"
+                    >
+                      Close
+                    </button>
+                    <button type="button" class="btn btn-success save_next_btn">
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="top_remove">2024 Avaada Group . All Rights Reserved.</footer>
+
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+      function saveStatus() {
+        // Replace this function with your logic to save the status
+        // For demonstration, let's just close the modal
+        var statusName = document.getElementById("statusName").value;
+        console.log("Status Name:", statusName);
+        $("#statusModal").modal("hide");
+      }
+    </script>
+    <script>
+      function redirectToPage() {
+        var select = document.getElementById("redirectDropdown");
+        var selectedValue = select.options[select.selectedIndex].value;
+
+        // Redirect to the selected page
+        if (selectedValue !== "" && selectedValue !== undefined) {
+          window.location.href = selectedValue;
+        }
+      }
+    </script>
+    <script>
+      function redirectToPages() {
+        var select = document.getElementById("redirectDropdowns");
+        var selectedValue = select.options[select.selectedIndex].value;
+
+        // Redirect to the selected page
+        if (selectedValue !== "" && selectedValue !== undefined) {
+          window.location.href = selectedValue;
+        }
+      }
+    </script>
+  </body>
+</html>
